@@ -1,0 +1,336 @@
+/* App Container */
+.app-container {
+    
+    /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Full viewport height */
+    background-color: #358ce3; /* Soft gray for better contrast */
+    padding: 20px; /* Add padding for internal spacing */
+    
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Limit the width for better design */
+    margin: 20px auto; /* Center the container with auto margins */
+    
+}
+
+/* Balance Section */
+.balance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Bright white for clarity */
+    
+    animation: enter-balance 0.6s ease-in-out forwards; /* Slightly longer animation */
+}
+
+.balance-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #495057; /* Darker text for better readability */
+    animation: fade-in 0.4s ease-in-out forwards;
+    animation-delay: 0.1s;
+}
+
+.balance-amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #28a745; /* Vibrant green for positive balance */
+    animation: number-up 0.8s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Animations */
+@keyframes enter-balance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes number-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Income/Expense Section */
+.income-expense-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    
+    animation: enter-income-expense 0.6s ease-in-out forwards;
+}
+
+.income-container,
+.expense-container {
+    flex: 1;
+    text-align: center;
+}
+
+.income-title,
+.expense-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #495057; /* Darker text for titles */
+}
+
+.money {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.money.plus {
+    color: #28a745; /* Vibrant green for positive income */
+}
+
+.money.minus {
+    color: #dc3545; /* Bright red for negative expense */
+}
+
+/* Animations */
+@keyframes enter-income-expense {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add Transaction Section */
+.add-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    
+    animation: enter-add-transaction 0.6s ease-in-out forwards;
+}
+
+.h3-element {
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #495057; /* Darker color for titles */
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Increased spacing */
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+}
+
+/* Label Styles */
+.form-label {
+    flex: 1;
+    font-size: 14px;
+    margin-right: 5px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+/* Label Focus State (when associated input is focused) */
+.form-label.active {
+    color: #007bff; /* Change color when the input is focused */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-label {
+        font-size: 12px; /* Smaller font size on mobile devices */
+    }
+}
+
+.form-input,
+.add-Transaction {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+/* Input Styles */
+.form-input {
+    flex: 2;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus State */
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Input Placeholder Style */
+.form-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.add-Transaction {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Add hover effect */
+}
+
+.add-Transaction:hover {
+    background-color: #0069d9;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Animations */
+@keyframes enter-add-transaction {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Transaction List Section */
+.transaction-list-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    
+    animation: enter-transaction-list 0.6s ease-in-out forwards;
+}
+
+.transaction-list-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #495057; /* Darker title color */
+}
+
+.transaction-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes enter-transaction-list {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Transaction Item */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Light gray background for all transactions */
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.transaction-item.income {
+    background-color: #d4edda; /* Light green for income transactions */
+}
+
+.transaction-item.expense {
+    background-color: #f8d7da; /* Light red for expense transactions */
+}
+
+.transaction-item:hover {
+    background-color: #e2e6ea; /* Darker gray on hover for better contrast */
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-text {
+    font-size: 16px;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-amount.income {
+    color: #28a745; /* Vibrant green for income amount */
+}
+
+.transaction-amount.expense {
+    color: #dc3545; /* Bright red for expense amount */
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    transition: color 0.2s ease-in-out; /* Add hover effect */
+}
+
+.delete-btn:hover {
+    color: #000; /* Black on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust layout for smaller screens */
+    .app-container {
+        flex-direction: column;
+    }
+
+    .income-expenses-section {
+        flex-direction: column;
+    }
+
+    /* Other responsive adjustments as needed */
+}
